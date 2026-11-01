@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cursos de Administração em SP</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Cursos de Administração em SP</h1>
+<p class="sub">Defina o que importa para você e veja os cursos ordenados por afinidade.</p>
+<section class="panel">
+ <div class="row"><span class="lbl">Tipo de instituição</span>
+  <button class="chip" data-t="all" aria-pressed="true">Tanto faz</button>
+  <button class="chip" data-t="pub" aria-pressed="false">Só públicas</button>
+  <button class="chip" data-t="priv" aria-pressed="false">Só privadas</button></div>
+ <span class="lbl" style="display:block;margin-bottom:6px">Importância de cada critério</span>
+ <div class="sl"><span>Mensalidade</span><input type="range" id="w_price" min="0" max="10" value="5"><output></output></div>
+ <div class="sl"><span>Distância</span><input type="range" id="w_dist" min="0" max="10" value="5"><output></output></div>
+ <div class="sl"><span>Avaliação (ENADE)</span><input type="range" id="w_enade" min="0" max="10" value="5"><output></output></div>
+ <div class="row" style="margin-top:14px"><span class="lbl">Sua localização</span>
+  <button class="btn" id="geo">Usar minha localização</button>
+  <select id="city"><option value="">ou escolha sua cidade…</option></select></div>
+ <p class="note" id="locnote">Sem localização, o critério de distância é ignorado. A distância usa o centro do município.</p>
+ <p class="note">Mensalidade provisória: pública = R$ 0 e privada = valor único, até a base de preços ser incluída.</p>
+</section>
+<div id="list"></div>
+<button class="btn more" id="more" hidden>Mostrar mais</button>
+</main>
+<script src="dados.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
